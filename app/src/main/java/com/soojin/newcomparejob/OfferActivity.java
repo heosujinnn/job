@@ -13,7 +13,7 @@ import androidx.room.Room;
 
 import java.io.Serializable;
 
-public class CurrentActivity extends AppCompatActivity {
+public class OfferActivity extends AppCompatActivity {
 
     UserDatabase db;
 
@@ -55,7 +55,7 @@ public class CurrentActivity extends AppCompatActivity {
         cancel_btn=(Button)findViewById(R.id.canel_btn);
 
         dao=db.userDao();
-        currentjob=dao.getCurrentJob();
+       // currentjob=dao.getCurrentJob();
 
         if(currentjob!=null){  //null 이 아니라면 비어있지 않다면 이거
             title.setText(currentjob.getTitle());
@@ -70,7 +70,7 @@ public class CurrentActivity extends AppCompatActivity {
         }
         else{
             //boolean current job 이 0 이면 ?? 비어있으면
-            Toast.makeText(CurrentActivity.this, "입력해주세요", Toast.LENGTH_SHORT).show();
+            Toast.makeText(OfferActivity.this, "입력해주세요", Toast.LENGTH_SHORT).show();
 
         }
         save_btn.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +96,7 @@ public class CurrentActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(title_str)||TextUtils.isEmpty(company_str)||TextUtils.isEmpty(livingCost_str)||TextUtils.isEmpty(loction_str)||
                 TextUtils.isEmpty(salary_str)||TextUtils.isEmpty(bonus_str)||TextUtils.isEmpty(RSUA_str)||TextUtils.isEmpty(stipend_str)||
                 TextUtils.isEmpty(holiday_str)){
-            Toast.makeText(CurrentActivity.this, "비어있음", Toast.LENGTH_SHORT).show();
+            Toast.makeText(OfferActivity.this, "비어있음", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -115,12 +115,9 @@ public class CurrentActivity extends AppCompatActivity {
 
         dao=db.userDao();
         dao.setInsertUser(user);
-        Toast.makeText(CurrentActivity.this, "save", Toast.LENGTH_LONG).show();
+        Toast.makeText(OfferActivity.this, "save", Toast.LENGTH_LONG).show();
 
-        Intent intent=new Intent(CurrentActivity.this, CompareJob.class);
-
-//        ArrayList<User> userArrayList=new ArrayList<User>();
-//        dao.getUserAll()
+        Intent intent=new Intent(OfferActivity.this,OfferResult.class);
 
         intent.putExtra("user", (Serializable) user);
         startActivity(intent);

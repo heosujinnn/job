@@ -26,29 +26,29 @@ public class MainActivity extends AppCompatActivity {
         currentJobBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this, currentActivity.class);
+                Intent intent=new Intent(MainActivity.this, CurrentActivity.class);
                 startActivity(intent);
             }
         });
         addOfferBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent=new Intent(MainActivity.this, offerActivity.class);
-//                startActivity(intent);
+                Intent intent=new Intent(MainActivity.this, OfferActivity.class);
+                startActivity(intent);
             }
         });
         adjustWeightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent=new Intent(MainActivity.this, comparisonActivity.class);
-//                startActivity(intent);
+                Intent intent=new Intent(MainActivity.this, adjustWeight.class);
+                startActivity(intent);
             }
         });
         compareJobsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent=new Intent(MainActivity.this, CompareOfferActivity.class);
-//                startActivity(intent);
+                Intent intent=new Intent(MainActivity.this, CompareJob.class);
+                startActivity(intent);
             }
         });
 
