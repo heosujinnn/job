@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NewCompareJob</string>
+
+    <string name="menu_title">Help Robert Find the Best Job</string>
+    <string name="current_job_menu_btn">Add Current Job</string>
+    <string name="offer_menu_btn">Add Offer</string>
+    <string name="adjust_weights_menu_btn">Adjust Settings</string>
+    <string name="compare_jobs_menu_btn">Compare All Jobs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
