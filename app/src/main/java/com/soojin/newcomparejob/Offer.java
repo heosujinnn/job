@@ -3,10 +3,8 @@ package com.soojin.newcomparejob;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-public class Offer {
-    @Entity
-    public class User {
+@Entity
+public class Offer{
         @PrimaryKey(autoGenerate = true)
         public int id;
 
@@ -32,7 +30,7 @@ public class Offer {
         @ColumnInfo(name = "isCurrentJob")
         private boolean isCurrentJob;
 
-        public User() {
+        public Offer() {
 
         }
 
@@ -124,7 +122,7 @@ public class Offer {
             isCurrentJob = currentJob;
         }
 
-        public User(int id, String title, String company, String location, int living_cost, double yearly_salary, double yearly_bonus, double RSUA, double stipend, int holiday, boolean isCurrentJob) {
+        public Offer(int id, String title, String company, String location, int living_cost, double yearly_salary, double yearly_bonus, double RSUA, double stipend, int holiday, boolean isCurrentJob) {
             this.id = id;
             this.title = title;
             this.company = company;
@@ -138,4 +136,3 @@ public class Offer {
             this.isCurrentJob = isCurrentJob;
         }
     }
-}

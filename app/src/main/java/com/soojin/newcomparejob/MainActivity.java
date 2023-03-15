@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db= Room.databaseBuilder(getApplicationContext(),UserDatabase.class,"job").allowMainThreadQueries().build();
+        db= Room.databaseBuilder(getApplicationContext(),UserDatabase.class,"user").allowMainThreadQueries().build();
 
         Button currentJobBtn = findViewById(R.id.current_job_btn);
         Button addOfferBtn = findViewById(R.id.add_offer_btn);

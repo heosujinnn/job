@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 public class CurrentActivity extends AppCompatActivity {
 
-    UserDatabase db;
+    UserDatabase userDatabase;
 
     private EditText title;
     private EditText company;
@@ -33,13 +33,15 @@ public class CurrentActivity extends AppCompatActivity {
     private UserDao dao;
     private User currentjob;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current);
 
-        db= Room.databaseBuilder(getApplicationContext(),UserDatabase.class,
-                "job").allowMainThreadQueries().build();
+        userDatabase=UserDatabase.getAppDatabase(this);
+     //   db= Room.databaseBuilder(getApplicationContext(),UserDatabase.class,
+       //         "user").allowMainThreadQueries().build();
 
         title=(EditText) findViewById(R.id.title_et);
         company=(EditText) findViewById(R.id.company_et);
@@ -54,7 +56,7 @@ public class CurrentActivity extends AppCompatActivity {
         save_btn=(Button)findViewById(R.id.save_btn);
         cancel_btn=(Button)findViewById(R.id.canel_btn);
 
-        dao=db.userDao();
+        dao=userDatabase.userDao();
         currentjob=dao.getCurrentJob();
 
         if(currentjob!=null){  //null 이 아니라면 비어있지 않다면 이거
@@ -113,11 +115,11 @@ public class CurrentActivity extends AppCompatActivity {
         user.setStipend(Double.parseDouble(stipend.getText().toString()));
         user.setHoliday(Integer.parseInt(holiday.getText().toString()));
 
-        dao=db.userDao();
+        dao=userDatabase.userDao();
         dao.setInsertUser(user);
         Toast.makeText(CurrentActivity.this, "save", Toast.LENGTH_LONG).show();
 
-        Intent intent=new Intent(CurrentActivity.this, CompareJob.class);
+        Intent intent=new Intent(CurrentActivity.this, CurrentResult.class);
         startActivity(intent);
     }
 

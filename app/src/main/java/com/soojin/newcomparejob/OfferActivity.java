@@ -9,13 +9,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Dao;
 import androidx.room.Room;
 
 import java.io.Serializable;
 
 public class OfferActivity extends AppCompatActivity {
 
-    UserDatabase db;
+    OfferDatabase offerDatabase;
+
 
     private EditText title;
     private EditText company;
@@ -30,16 +32,17 @@ public class OfferActivity extends AppCompatActivity {
     private Button save_btn;
     private Button cancel_btn;
 
-    private UserDao dao;
-    private User currentjob;
+    private OfferDao dao;
+    private Offer currentjob;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current);
 
-        db= Room.databaseBuilder(getApplicationContext(),UserDatabase.class,
-                "job").allowMainThreadQueries().build();
+        offerDatabase=OfferDatabase.getAppDatabase(this);
+      //  db= Room.databaseBuilder(getApplicationContext(),OfferDatabase.class,
+      //          "user").allowMainThreadQueries().build();
 
         title=(EditText) findViewById(R.id.title_et);
         company=(EditText) findViewById(R.id.company_et);
@@ -54,7 +57,7 @@ public class OfferActivity extends AppCompatActivity {
         save_btn=(Button)findViewById(R.id.save_btn);
         cancel_btn=(Button)findViewById(R.id.canel_btn);
 
-        dao=db.userDao();
+        dao=offerDatabase.offerDao();
        // currentjob=dao.getCurrentJob();
 
         if(currentjob!=null){  //null 이 아니라면 비어있지 않다면 이거
@@ -102,24 +105,22 @@ public class OfferActivity extends AppCompatActivity {
     }
     public void save(){
         Blank();
-        User user=new User();
-        user.setTitle(title.getText().toString());
-        user.setCompany(company.getText().toString());
-        user.setLocation(loction.getText().toString());
-        user.setLiving_cost(Integer.parseInt(livingCost.getText().toString()));
-        user.setYearly_salary(Double.parseDouble(salary.getText().toString()));
-        user.setYearly_bonus(Double.parseDouble(bonus.getText().toString()));
-        user.setRSUA(Double.parseDouble(RSUA.getText().toString()));
-        user.setStipend(Double.parseDouble(stipend.getText().toString()));
-        user.setHoliday(Integer.parseInt(holiday.getText().toString()));
+        Offer offer=new Offer();
+        offer.setTitle(title.getText().toString());
+        offer.setCompany(company.getText().toString());
+        offer.setLocation(loction.getText().toString());
+        offer.setLiving_cost(Integer.parseInt(livingCost.getText().toString()));
+        offer.setYearly_salary(Double.parseDouble(salary.getText().toString()));
+        offer.setYearly_bonus(Double.parseDouble(bonus.getText().toString()));
+        offer.setRSUA(Double.parseDouble(RSUA.getText().toString()));
+        offer.setStipend(Double.parseDouble(stipend.getText().toString()));
+        offer.setHoliday(Integer.parseInt(holiday.getText().toString()));
 
-        dao=db.userDao();
-        dao.setInsertUser(user);
+        dao=offerDatabase.offerDao();
+        dao.setInsertUser(offer);
         Toast.makeText(OfferActivity.this, "save", Toast.LENGTH_LONG).show();
 
         Intent intent=new Intent(OfferActivity.this,OfferResult.class);
-
-        intent.putExtra("user", (Serializable) user);
         startActivity(intent);
         finish();
     }

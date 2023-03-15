@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class OfferResult extends AppCompatActivity {
+public class CurrentResult extends AppCompatActivity {
 
     private TextView title_tv2;
     private TextView company_tv2;
@@ -38,18 +38,18 @@ public class OfferResult extends AppCompatActivity {
         stipend_tv2=findViewById(R.id.stipend_tv2);
         holiday_tv2=findViewById(R.id.holiday_tv2);
 
-        OfferDatabase offerDatabase=OfferDatabase.getAppDatabase(this);
+        UserDatabase userDatabase=UserDatabase.getAppDatabase(this);
 
         //db에 저장된 값을 가져오기
-        String title_str=offerDatabase.offerDao().getTitleAll2();
-        String company_str=offerDatabase.offerDao().getCompanyAll();
-        String loction_str=offerDatabase.offerDao().getLoctionAll();
-        int cost_str=offerDatabase.offerDao().getLivingCostAll();
-        double salary_str=offerDatabase.offerDao().getSalaryAll();
-        double bonus_str=offerDatabase.offerDao().getBonusAll();
-        double RSUA_str=offerDatabase.offerDao().getRsuaAll();
-        double stipend_str=offerDatabase.offerDao().getStipendAll();
-        int holiday_str=offerDatabase.offerDao().getHolidayAll();
+        String title_str=userDatabase.userDao().getTitleAll();
+        String company_str=userDatabase.userDao().getCompanyAll();
+        String loction_str=userDatabase.userDao().getLoctionAll();
+        int cost_str=userDatabase.userDao().getLivingCostAll();
+        double salary_str=userDatabase.userDao().getSalaryAll();
+        double bonus_str=userDatabase.userDao().getBonusAll();
+        double RSUA_str=userDatabase.userDao().getRsuaAll();
+        double stipend_str=userDatabase.userDao().getStipendAll();
+        int holiday_str=userDatabase.userDao().getHolidayAll();
 
         title_tv2.setText(title_str);
         company_tv2.setText(company_str);
@@ -64,10 +64,9 @@ public class OfferResult extends AppCompatActivity {
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(OfferResult.this,MainActivity.class);
+                Intent intent =new Intent(CurrentResult.this,MainActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }
