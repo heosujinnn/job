@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/salary"
@@ -60,10 +60,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/yearlySalaryWeightText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -90,18 +89,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/yearlyBonusWeightText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Yearly Bonus"
+                    android:text="Stock "
                     android:textSize="20dp" />
 
                 <EditText
-                    android:id="@+id/Stock"
+                    android:id="@+id/stock_et"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -120,18 +118,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/reloction"
+                    android:id="@+id/loction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Raloction"
+                    android:text="Reloction"
                     android:textSize="20dp" />
 
                 <EditText
-                    android:id="@+id/reloction_et"
+                    android:id="@+id/loction_et"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -150,14 +148,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="102dp"
                 android:orientation="horizontal"
-                android:padding="20dp">
+                android:padding="5dp">
 
                 <TextView
                     android:id="@+id/holiday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Leave Time"
+                    android:text="holiday"
                     android:textSize="20dp" />
 
                 <EditText

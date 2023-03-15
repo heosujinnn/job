@@ -25,7 +25,7 @@ public class OfferResult extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_current_result);
+        setContentView(R.layout.activity_offer_result);
 
         menu_btn=findViewById(R.id.menu_btn);
         title_tv2=findViewById(R.id.title_tv2);
