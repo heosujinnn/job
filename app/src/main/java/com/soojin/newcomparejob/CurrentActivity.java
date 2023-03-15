@@ -118,13 +118,7 @@ public class CurrentActivity extends AppCompatActivity {
         Toast.makeText(CurrentActivity.this, "save", Toast.LENGTH_LONG).show();
 
         Intent intent=new Intent(CurrentActivity.this, CompareJob.class);
-
-//        ArrayList<User> userArrayList=new ArrayList<User>();
-//        dao.getUserAll()
-
-        intent.putExtra("user", (Serializable) user);
         startActivity(intent);
-        finish();
     }
 
 }

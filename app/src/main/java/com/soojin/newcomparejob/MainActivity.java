@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         compareJobsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this, CompareJob.class);
+                Intent intent=new Intent(MainActivity.this,CompareJob.class);
                 startActivity(intent);
             }
         });

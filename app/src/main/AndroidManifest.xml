@@ -25,6 +25,23 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".CompareJob"
+            android:exported="false"/>
+        <activity
+            android:name=".CurrentActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".adjustWeight"
+            android:exported="false"/>
+        <activity
+            android:name=".OfferActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".OfferResult"
+            android:exported="false"/>
+
+
     </application>
 
 </manifest>
