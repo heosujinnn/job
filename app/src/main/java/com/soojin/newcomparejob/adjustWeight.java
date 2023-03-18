@@ -10,24 +10,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class adjustWeight extends AppCompatActivity {
 
+    WeightDatabase weightDatabase;
     private EditText salary_et;
     private EditText bonus_et;
     private EditText stock_et;
     private EditText loction_et;
     private EditText holiday_et;
     private Button adjustSave_btn;
+    private weightDao dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adjust);
 
+        weightDatabase=WeightDatabase.getAppDatabase(this);
+        dao=weightDatabase.weightDao();
         salary_et = findViewById(R.id.salary_et);
         bonus_et = findViewById(R.id.bonus_et);
         stock_et = findViewById(R.id.RSUA_et);
         loction_et = findViewById(R.id.stipend_et);
         holiday_et = findViewById(R.id.holiday_et);
         adjustSave_btn = findViewById(R.id.adjustSave_btn);
+
+
 
 
 
@@ -44,6 +50,7 @@ public class adjustWeight extends AppCompatActivity {
     public void weight(){
         //1. 총 가중치 계산하기 editText 에 있는 값 더하기..?
          double total=0;
+
 
         //2. 백분율 치환( 가중치 / 총 가중치 )
         // 가중치 / editText 에 있는 값 더하기..?
