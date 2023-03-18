@@ -53,6 +53,4 @@ public interface OfferDao {
     int getHolidayAll();
 
 
-
-
 }

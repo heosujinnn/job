@@ -13,7 +13,6 @@ public interface UserDao {
     @Insert
     void setInsertUser(User user);
 
-
     @Update
     void setUpdateUser(User user);
 
@@ -52,8 +51,5 @@ public interface UserDao {
 
     @Query("SELECT holiday from User")
     int getHolidayAll();
-
-
-
 
 }

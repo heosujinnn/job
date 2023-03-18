@@ -95,11 +95,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Stock "
+                    android:text="Stock(RSUA)"
                     android:textSize="20dp" />
 
                 <EditText
-                    android:id="@+id/stock_et"
+                    android:id="@+id/RSUA_et"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -121,15 +121,15 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/loction"
+                    android:id="@+id/Stipend_et"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Reloction"
+                    android:text="Reloction Stipend"
                     android:textSize="20dp" />
 
                 <EditText
-                    android:id="@+id/loction_et"
+                    android:id="@+id/stipend_et"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
